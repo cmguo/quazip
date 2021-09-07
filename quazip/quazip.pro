@@ -50,12 +50,16 @@ HEADERS += \
     unzip.h \
     zip.h
 
+LIBS += -lz
+
 # Default rules for deployment.
-unix {
-    target.path = /usr/lib
-}
+includes.files = $$PWD/*.h
+includes.path = $$OUT_PWD/../include
+target.path = $$OUT_PWD/../../debug
+
+INSTALLS += includes
 !isEmpty(target.path): INSTALLS += target
 
-CONFIG(debug, debug|release) {
+win32:CONFIG(debug, debug|release) {
     TARGET = $$join(TARGET,,,d)
 }

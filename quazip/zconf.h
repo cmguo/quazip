@@ -9,7 +9,7 @@
 #define ZCONF_H
 
 /* Since Qt Core must export these symbols, define Z_PREFIX to avoid clashes system zlib */
-#define Z_PREFIX
+//#define Z_PREFIX
 
 /*
  * If you *really* need a unique prefix for all types and library functions,
